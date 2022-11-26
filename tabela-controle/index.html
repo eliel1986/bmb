@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de bombeio</title>
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div>
+        <table>
+            <caption>Medição de tanque</caption>
+            <thead>
+
+                <tr>
+                    <th>Data</th>
+
+                    <td class="preenc" style= "width: 100px">
+                        <input id="inserir-data"</input>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <th>Bombeio nº</th>
+
+                    <td class="preenc" style= "width: 100px">
+                        <input id="inserir-bombeio-num"></input>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Tanque</th>
+
+                    <td class="preenc" style= "width: 100px">
+                        <input id="inserir-num-tanque"></input>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Produto</th>
+
+                    <td class="preenc" style= "width: 100px">
+                        <input id="inserir-produto"></input>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Altura inicial (mm)</th>
+
+                    <td class="preenc" style= "width: 100px">
+                        <input id="inserir-alt-inicial"></input>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Cota a receber (m³)</th>
+
+                    <td class="preenc" style= "width: 100px">
+                        <input id="inserir_cota_receber"></input>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+
+        <button id="enviar">Enviar</button>
+        
+        
+    </div>
+    <div>
+        <!-- HIERARQUIA DE TABELAS
+        table = tabela;
+        table row = linha de tabela 'tr';
+        table header = cabeçalho de tabela;
+        table data = dados de tabela 'td'; -->
+        
+
+
+        <!-- ANAMOTOMIA PARA TABELAS GRANDES
+        table
+        caption (espécie de legenda da tabela)
+        thead
+        tr, td, th
+        tbody
+        tr, td, th
+        tfoot
+        tr, td, th
+        table -->
+    
+
+        <table>
+            <caption>Acompanhamento do bombeio</caption>
+            <thead>
+
+                <tr>
+                    <th>Bombeio nº</th>
+
+                    <th>Data do bombeio</th>
+
+                    <!-- <th colspan="9">Produto</th> colspan = mesclagem de colunas -->
+
+                    <th colspan="2">Hora de parada</th>
+                </tr>
+
+                <tr>
+                    <th class="formula">
+                        <p id="numerobombeio"></p>
+                    </th>
+
+                    <th class="formula">
+                        <p id="databombeio"></p>
+                    </th>
+
+                    <th colspan="9" class="formula">
+                        <p id="produto"></p>
+                    </th>
+
+                    <th class="formula">
+                        <p id="horaparada"></p>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th colspan="12">Dados do tanque receptor</th>
+                </tr>
+                <tr>
+                    <th rowspan="2">Nº do tanque recebedor</th>
+                    <th colspan="5">Altura inicial</th>
+                    <th rowspan="2">Espaço vazio (m³)</th>
+                    <th rowspan="2">Cota (m³)</th>
+                    <th colspan="2">Altura final</th>
+                    <th rowspan="2">Vazão (m³/h)</th>
+                    <th rowspan="2">Tempo de bombeio</th>
+                </tr>
+
+                <tr>
+                    <th>Segurança (mm)</th>
+                    <th>Segurança (m³)</th>
+                    <th>(mm)</th>
+                    <th>(m³)</th>
+                    <th>Espaço vazio (mm)</th>
+                    <th>(mm)</th>
+                    <th>(m³)</th>
+                </tr>
+
+                <tr class="formula">
+                    <th>
+                        <p id="numero-tq-receb"></p>
+                    </th>
+                    <th>
+                        <p id="alt-seg-mm">14500</p>
+                    </th>
+                    <th>
+                        <p id="alt-seg-mt">2653</p>
+                    </th>
+                    <th>
+                        <p id="alt-inic"></p>
+                    </th>
+                    <th>
+                        <p id="mt-inic"></p>
+                    </th>
+                    <th>
+                        <p id="esp-vazio-mm"></p>
+                    </th>
+                    <th>
+                        <p id="esp-vazio-mt"></p>
+                    </th>
+                    <th>
+                        <p id="cota"></p>
+                    </th>
+                    <th>
+                        <p id="altura-final-mm"></p>
+                    </th>
+                    <th>
+                        <p id="altura-final-mt"></p>
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th colspan="12">Dados do tanque expedidor</th>
+                </tr>
+                <tr>
+                    <th colspan="2">Número do tanque</th>
+                    <th colspan="2">Densidade a 20° C</th>
+                    <th colspan="2">Temperatura do tanque</th>
+                    <th colspan="3">Nº do certificado</th>
+                    <th>Hora de início</th>
+                    <th colspan="2">Previsão de parada</th>
+                </tr>
+                <tr class="dados">
+                    <td colspan="2"></td>
+                    <td colspan="2"></td>
+                    <td colspan="2"></td>
+                    <td colspan="3"></td>
+                    <td></td>
+                    <th colspan="2" class="formula"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="12"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Hora da leitura</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Nível (mm)</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Vazão (mm)</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Vazão (m³/h)</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Temperatura da linha</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Densidade ambiente</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Temperatura de amostra</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Densidade a 20° C</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Válvula de alívio térmico</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Sistema de transmissores e dados de comunicação</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Pressão do filtro montante</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+                <tr>
+                    <td class="col_tit">Observações</td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                    <td class="preenc"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="../inserir-dados/script.js"></script>
+    <a href="../index.html"><button>Voltar</button></a>
+</body>
+
+</html>

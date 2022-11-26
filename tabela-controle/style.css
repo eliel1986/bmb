@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    margin: auto;
+    /* width: 80vw; */
+    border: 1px solid black;
+    border-collapse: collapse; /* remove espaço entre bordas */
+    background-color: #6699ff;
+}
+
+caption {
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+td, th {
+    height: 12px;
+    width: 0.2rem;
+    font-size: 12px;
+    border: 1px solid black;
+    text-align: center; /* alinhamento horizontal */
+    /* vertical align = alinha itens da célula verticalmente */
+    padding: 5px;
+}
+
+thead {
+    background-color: #6699ff;
+}
+
+.titulo {
+    background-color: yellow;
+}
+
+.formula {
+    background-color: red;
+}
+
+.dados, .preenc {
+    background-color: white;
+}
+
+td {
+    font-size: 10pt;
+}
+
+.col_tit {
+    width: 200px
+}
+
+.preenc {
+    width: 50px
+}
+
+input {
+    text-align: center;
+}
