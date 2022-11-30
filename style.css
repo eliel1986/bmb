@@ -39,6 +39,20 @@ menu > ul {
     list-style-type: none; /*remove marcadores do menu*/
 }
 
+menu > ul > li > ul {
+    list-style-type: none; /*remove marcadores do menu*/
+}
+
+menu > ul > li > ul > li > a {
+    display: block;
+    padding: 10px;
+    text-decoration: none; /*remove sublinhado do link*/
+    text-align: center;
+    background-color: rgb(108, 108, 108);
+    color: rgb(200, 200, 200);
+    border-top: 1px solid gray;
+}
+
 menu > ul > li > a {
     display: block;
     padding: 10px;
@@ -50,14 +64,53 @@ menu > ul > li > a {
 }
 
 menu > ul > li > a:hover {
-    background-color: gray;
+    background-color: gray;  
+}
+
+menu > ul > li > ul {
+    display: none;
+    position: absolute;
+}
+
+menu > ul > li:hover > ul {
+    display: block; 
+}
+
+menu > ul > li > ul > li > a:hover {
+    background-color: gray;  
 }
 
 main {
     width: 90vw;
     background-color: white;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 120px;
     padding: 10px;
     border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    i#burguer {
+        display: none;
+    }
+
+    menu {
+        display: block;
+    }
+
+    menu > ul > li {
+        display: inline-block; /*um item ao lado do outro*/
+    }
+
+    menu > ul > li > a {
+        font-size: 12px;
+    }
+
+    menu > ul > li > ul > li > a {
+        font-size: 12px;
+    }
+
+    header {
+        text-align: center;
+    }
 }

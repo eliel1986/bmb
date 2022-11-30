@@ -9,7 +9,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="./style.css" rel="stylesheet" type="text/css" />
-    <link href="./media-query.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="./media-query.css" rel="stylesheet" type="text/css" /> -->
 </head>
 
 <body onresize="mudaTamanho()">
@@ -17,22 +17,144 @@
         <h1>Controle de bombeio</h1>
         <i id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</i>
         <menu id="itens">
-            <ul>
-                <li><a href="">Tanque 01</a></li>
-                <li><a href="">Tanque 02</a></li>
-                <li><a href="">Tanque 03</a></li>
-                <li><a href="">Tanque 04</a></li>
-                <li><a href="">Tanque 05</a></li>
-                <li><a href="">Tanque 07</a></li>
-                <li><a href="">Tanque 08</a></li>
-                <li><a href="">Tanque 10</a></li>
-                <li><a href="">Tanque 11</a></li>
-                <li><a href="">Tanque 12</a></li>
-                <li><a href="">Tanque 13</a></li>
+            <ul id="sub">
+                <li><a href="">Tanque 01</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
+                <li><a href="">Tanque 02</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
+                <li><a href="">Tanque 03</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
+                <li><a href="">Tanque 04</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
+                <li><a href="">Tanque 05</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
+                <li><a href="">Tanque 07</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
+                <li><a href="">Tanque 08</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
+                <li><a href="">Tanque 10</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
+                <li><a href="">Tanque 11</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
+                <li><a href="">Tanque 12</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
+                <li><a href="">Tanque 13</a>
+                    <ul>
+                        <li><a href="">Lançar</a>
+                        <li><a href="">Cadastrar</a>
+                        <li><a href="">Relatórios</a>
+                    </ul>
+                </li>
             </ul>
         </menu>
     </header>
     <main>
+        <div id="inserir-dados">
+            <table style="display: none">
+                <caption>Medição de tanque</caption>
+                <thead>
+    
+                    <tr>
+                        <th>Data</th>
+    
+                        <td class="preenc" style= "width: 100px">
+                            <input id="inserir-data"</input>
+                        </td>
+                    </tr>
+    
+                    <tr>
+    
+                        <th>Bombeio nº</th>
+    
+                        <td class="preenc" style= "width: 100px">
+                            <input id="inserir-bombeio-num"></input>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th>Tanque</th>
+    
+                        <td class="preenc" style= "width: 100px">
+                            <input id="inserir-num-tanque"></input>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th>Produto</th>
+    
+                        <td class="preenc" style= "width: 100px">
+                            <input id="inserir-produto"></input>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th>Altura inicial (mm)</th>
+    
+                        <td class="preenc" style= "width: 100px">
+                            <input id="inserir-alt-inicial"></input>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th>Cota a receber (m³)</th>
+    
+                        <td class="preenc" style= "width: 100px">
+                            <input id="inserir_cota_receber"></input>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
         <a href="./tabela-controle/index.html"><button>Iniciar</button></a>
     </main>
 

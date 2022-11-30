@@ -13,3 +13,7 @@ function clickMenu() {
         itens.style.display = 'block'
     }
 }
+
+function lancar() {
+    document.getElementById('inserir-dados').style.display = 'block';
+}
